@@ -1,0 +1,74 @@
+
+server:
+  servlet:
+    encoding:
+      charset: utf-8
+      enabled: true
+
+#logging:
+#  level:
+#    "[org.springframework.web.filter.CommonsRequestLoggingFilter]": debug
+
+spring:
+  profiles:
+    active:
+      - dev
+  output:
+    ansi:
+      enabled: always
+
+
+---
+
+server:
+  port: 8083
+  servlet:
+#    session:
+#      cookie:
+#        max-age: 1m
+spring:
+  config:
+    activate:
+      on-profile:
+        - dev
+
+
+
+    security:
+      user:
+        name: kang
+        password: 1234
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:8091
+        auto-registration: true
+
+
+
+
+
+management:
+  endpoint:
+    logfile:
+      external-file: ./logs/logback.log
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+#        include: health, beans, conditions, env, configprops, info, loggers, metrics, threaddump, logfile
+#
+#logging:
+#  path: ./logs/logback.log
+
+
+
+---
+
+server:
+  port: 8082
+spring:
+  config:
+    activate:
+      on-profile: prod

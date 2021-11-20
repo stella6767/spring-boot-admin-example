@@ -1,0 +1,8 @@
+server:
+  port: 8091
+
+spring:
+  security:
+    user:
+      name: kang
+      password: 1234

@@ -1,0 +1,27 @@
+[2021-11-20 19:35:58:625][restartedMain] INFO c.e.sbaclient.SbaclientApplication [31mlogStarting[0;39m - Starting SbaclientApplication using Java 11.0.12 on DESKTOP-36LPDNR with PID 15224 (C:\kangminkyu\intelljwork\sba-example\sbaclient\target\classes started by songn in C:\kangminkyu\intelljwork\sba-example\sbaclient)
+[2021-11-20 19:35:58:627][restartedMain] DEBUGc.e.sbaclient.SbaclientApplication [31mlogStarting[0;39m - Running with Spring Boot v2.6.0, Spring v5.3.13
+[2021-11-20 19:35:58:627][restartedMain] INFO c.e.sbaclient.SbaclientApplication [31mlogStartupProfileInfo[0;39m - The following profiles are active: dev
+[2021-11-20 19:35:58:662][restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [31mlogTo[0;39m - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2021-11-20 19:35:58:663][restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [31mlogTo[0;39m - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2021-11-20 19:35:59:1668][restartedMain] INFO o.s.b.w.e.tomcat.TomcatWebServer [31minitialize[0;39m - Tomcat initialized with port(s): 8083 (http)
+[2021-11-20 19:35:59:1678][restartedMain] INFO o.a.coyote.http11.Http11NioProtocol [31mlog[0;39m - Initializing ProtocolHandler ["http-nio-8083"]
+[2021-11-20 19:35:59:1679][restartedMain] INFO o.a.catalina.core.StandardService [31mlog[0;39m - Starting service [Tomcat]
+[2021-11-20 19:35:59:1679][restartedMain] INFO o.a.catalina.core.StandardEngine [31mlog[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55]
+[2021-11-20 19:35:59:1753][restartedMain] INFO o.a.c.c.C.[Tomcat].[localhost].[/] [31mlog[0;39m - Initializing Spring embedded WebApplicationContext
+[2021-11-20 19:35:59:1753][restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext [31mprepareWebApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 1090 ms
+[2021-11-20 19:35:59:1912][restartedMain] INFO c.e.sbaclient.service.TestService [31mtest[0;39m - 시작!!
+[2021-11-20 19:35:59:1957][restartedMain] INFO o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [31mgetOrDeducePassword[0;39m - 
+
+Using generated security password: 18cf1e01-edaf-4687-a790-c2e4e5fa4c5e
+
+[2021-11-20 19:35:59:2011][restartedMain] INFO o.s.s.w.DefaultSecurityFilterChain [31m<init>[0;39m - Will secure org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest$EndpointRequestMatcher@1dd91311 with []
+[2021-11-20 19:35:59:2026][restartedMain] INFO o.s.s.w.DefaultSecurityFilterChain [31m<init>[0;39m - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e8b7f59, org.springframework.security.web.context.SecurityContextPersistenceFilter@7347d3fc, org.springframework.security.web.header.HeaderWriterFilter@4ff237d, org.springframework.web.filter.CorsFilter@a14d018, org.springframework.security.web.authentication.logout.LogoutFilter@3b6f679a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@74c7d8c3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f61536a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40eebf94, org.springframework.security.web.session.SessionManagementFilter@3460d3, org.springframework.security.web.access.ExceptionTranslationFilter@7847d2f7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@55ce5685]
+[2021-11-20 19:35:59:2356][restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer [31mstartServer[0;39m - LiveReload server is running on port 35729
+[2021-11-20 19:35:59:2359][restartedMain] INFO o.s.b.a.e.web.EndpointLinksResolver [31m<init>[0;39m - Exposing 14 endpoint(s) beneath base path '/actuator'
+[2021-11-20 19:35:59:2384][restartedMain] INFO o.a.coyote.http11.Http11NioProtocol [31mlog[0;39m - Starting ProtocolHandler ["http-nio-8083"]
+[2021-11-20 19:36:00:2400][restartedMain] INFO o.s.b.w.e.tomcat.TomcatWebServer [31mstart[0;39m - Tomcat started on port(s): 8083 (http) with context path ''
+[2021-11-20 19:36:00:2415][restartedMain] INFO c.e.sbaclient.SbaclientApplication [31mlogStarted[0;39m - Started SbaclientApplication in 2.212 seconds (JVM running for 4.099)
+[2021-11-20 19:36:01:3691][RMI TCP Connection(2)-172.18.208.1] INFO o.a.c.c.C.[Tomcat].[localhost].[/] [31mlog[0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-11-20 19:36:01:3693][RMI TCP Connection(2)-172.18.208.1] INFO o.s.web.servlet.DispatcherServlet [31minitServletBean[0;39m - Initializing Servlet 'dispatcherServlet'
+[2021-11-20 19:36:01:3694][RMI TCP Connection(2)-172.18.208.1] INFO o.s.web.servlet.DispatcherServlet [31minitServletBean[0;39m - Completed initialization in 1 ms
+[2021-11-20 19:36:11:13545][registrationTask1] WARN d.c.b.a.c.r.ApplicationRegistrator [31mregister[0;39m - Failed to register application as Application(name=spring-boot-application, managementUrl=http://DESKTOP-36LPDNR:8083/actuator, healthUrl=http://DESKTOP-36LPDNR:8083/actuator/health, serviceUrl=http://DESKTOP-36LPDNR:8083/) at spring-boot-admin ([http://localhost:8091/instances]): I/O error on POST request for "http://localhost:8091/instances": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect. Further attempts are logged on DEBUG level

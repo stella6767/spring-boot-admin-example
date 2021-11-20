@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 60초마다 설정 파일의 변경을 확인 하여 변경시 갱신 -->
+<configuration scan="true" scanPeriod="60 seconds">
+
+    <!--로그 파일 저장 위치 -->
+    <!--	<springProfile name="dev">-->
+    <!--		<property name="LOGS_PATH" value="/springBoot/yangjaeBack/logs" />-->
+    <!--	</springProfile>-->
+
+    <springProfile name="dev">
+        <property name="LOGS_PATH" value="./logs"/>
+    </springProfile>
+
+
+    <springProfile name="prod">
+        <property name="LOGS_PATH" value="/springBoot/yangjaeBack/logs"/>
+    </springProfile>
+
+
+    <!-- 이 속성 안 쓸거임 -->
+    <!--    <property name="CONSOLE_LOG_PATTERN"-->
+    <!--              value="${CONSOLE_LOG_PATTERN:-%clr(%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}}){green} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(-&#45;&#45;){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>-->
+    <!--    <property name="CONSOLE_LOG_CHARSET" value="${CONSOLE_LOG_CHARSET:-default}"/>-->
+
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <withJansi>true</withJansi>
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%thread] %green(%-5level) %logger{35} %cyan(%logger{15})
+                %green(%M) - %msg %n
+            </pattern>
+        </encoder>
+    </appender>
+
+
+    <!-- 에러의 경우 파일에 로그 처리 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS_PATH}/logback.log</file>
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%thread] %-5level%logger{35} %red(%M) - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- .gz,.zip 등을 넣으면 자동 일자별 로그파일 압축 -->
+            <fileNamePattern>${LOGS_PATH}/logback.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- 파일당 최고 용량 -->
+                <maxFileSize>5MB</maxFileSize>
+                <!-- kb, mb, gb -->
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- 일자별 로그파일 최대 보관주기(~일), 해당 설정일 이상된 파일은 자동으로 제거-->
+            <maxHistory>1</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+
+    <!-- 여기서 파일에 기록할 로그레벨 지정 additivity="false" 중복 제거 -->
+    <!-- <logger name="net.lunalabs.central" level="DEBUG" > <appender-ref ref="DAILY_ROLLING_FILE_APPENDER" /> </logger> -->
+
+    <!-- root레벨 설정 -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+
+    <logger name="com.example.sbaclient" level="debug" additivity="false">
+        <!-- ref="appender name 지정" -->
+        <appender-ref ref="FILE"/>
+    </logger>
+
+
+
+</configuration>
