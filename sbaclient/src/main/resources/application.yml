@@ -44,6 +44,12 @@ spring:
       client:
         url: http://localhost:8091
         auto-registration: true
+        username: kang
+        password: 1234
+        instance:
+          metadata:
+            user.name: kang
+            user.password: 1234
 
 
 
